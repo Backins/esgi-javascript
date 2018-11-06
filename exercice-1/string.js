@@ -32,7 +32,7 @@ function capitalize(str)
 		var tmp = str.split(" "), streturn = "";
 		for (i in tmp){
 			streturn += ucfirst(tmp[i]);
-			if(i < tmp.length) {
+			if(i < tmp.length - 1) {
 				streturn += " ";
 			}
 		}
@@ -45,6 +45,7 @@ function capitalize(str)
 function camelCase(str)
 {
 	if(testifyStr(str)){
+		str = str.replace(/[^a-z0-9]/gi,'');
 		return capitalize(str).split(" ").join("");
 	} else {
 		return "";
@@ -64,7 +65,6 @@ function leet(str)
 {
 	if(testifyStr(str)){
 		var tmp = "";
-		str = str.replace(/[^a-z0-9]/gi,'');
 		for(l in str){
 			switch(str[l].toUpperCase()){
 				case "A":
