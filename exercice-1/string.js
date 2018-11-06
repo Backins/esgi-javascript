@@ -27,13 +27,16 @@ function lcfirst(str)
 
 function capitalize(str)
 {
-	str = str.toLowerCase();
 	if(testifyStr(str)){
+		str = str.toLowerCase();
 		var tmp = str.split(" "), streturn = "";
 		for (i in tmp){
-			streturn += ucfirst(tmp[i]) + " ";
+			streturn += ucfirst(tmp[i]);
+			if(i < tmp.length) {
+				streturn += " ";
+			}
 		}
-		return streturn.trim();
+		return streturn;
 	} else {
 		return "";
 	}
@@ -61,6 +64,7 @@ function leet(str)
 {
 	if(testifyStr(str)){
 		var tmp = "";
+		str = str.replace(/[^a-z0-9]/gi,'');
 		for(l in str){
 			switch(str[l].toUpperCase()){
 				case "A":
@@ -97,4 +101,4 @@ console.log(ucfirst(null));
 console.log(capitalize("hello world !"));
 console.log(camelCase("Hello world WAHOU!"));
 console.log(snake_case("hello world !"));
-console.log(leet("a b c d e f g h i j k l m n o p q r s t u v w x y z"));
+console.log(leet("a b c d e f g h i j k l m n o p q r s t u v w x y_z"));
