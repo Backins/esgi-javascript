@@ -12,7 +12,7 @@ function ucfirst(str)
 	if(testifyStr(str)){
 		return str[0].toUpperCase() + str.slice(1);
 	} else {
-		return false;
+		return "";
 	}
 }
 
@@ -21,32 +21,30 @@ function lcfirst(str)
 	if(testifyStr(str)){
 		return str[0].toLowerCase() + str.slice(1);
 	} else {
-		return false;
+		return "";
 	}
 }
 
 function capitalize(str)
 {
-
+	str = str.toLowerCase();
 	if(testifyStr(str)){
 		var tmp = str.split(" "), streturn = "";
 		for (i in tmp){
 			streturn += ucfirst(tmp[i]) + " ";
 		}
-		return streturn;
+		return streturn.trim();
 	} else {
-		return false;
+		return "";
 	}
 }
 
 function camelCase(str)
 {
 	if(testifyStr(str)){
-		str = str.toLowerCase();
-		var tmp = capitalize(str).split(" ").join("");
-		return lcfirst(tmp);
+		return capitalize(str).split(" ").join("");
 	} else {
-		return false;
+		return "";
 	}
 }
 
@@ -55,7 +53,7 @@ function snake_case(str)
 	if(testifyStr(str)){
 		return str.split(" ").join("_").toLowerCase();
 	} else {
-		return false;
+		return "";
 	}
 }
 
@@ -75,7 +73,7 @@ function leet(str)
 					tmp += "1";
 					break;
 				case "O":
-					tmp += "o";
+					tmp += "0";
 					break;
 				case "U":
 					tmp += "(_)";
@@ -90,12 +88,12 @@ function leet(str)
 		}
 		return tmp;
 	} else {
-		return false;
+		return "";
 	}
 }
 
 
-console.log(ucfirst(""));
+console.log(ucfirst(null));
 console.log(capitalize("hello world !"));
 console.log(camelCase("Hello world WAHOU!"));
 console.log(snake_case("hello world !"));
