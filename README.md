@@ -1,6 +1,6 @@
 # Cours de Javascript - ESGI
 
-### Lesson
+### Lesson by @kmarques
 https://github.com/kmarques/esgi-cours
 
 ### Cmd list
