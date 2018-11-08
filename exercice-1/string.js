@@ -98,9 +98,24 @@ function leet(str)
 	}
 }
 
+function verlan(str)
+{
+	if(testifyStr(str)){
+        return str.split("").reverse().join("");
+	} else {
+		return "";
+	}
+}
 
-console.log(ucfirst(null));
-console.log(capitalize("hello world !"));
-console.log(camelCase("ToggleCase is_the coolest"));
-console.log(snake_case("hello world !"));
-console.log(leet("a b c d e f g h i j k l m n o p q r s t u v w x y_z"));
+function yoda(str)
+{
+	if(testifyStr(str)){
+        return str.split(" ").reverse().join(" ");
+	} else {
+		return "";
+	}
+}
+
+// For best result visibility
+// ->Result<-
+console.log("->"+yoda(null)+"<-");
