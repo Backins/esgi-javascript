@@ -45,7 +45,7 @@ function capitalize(str)
 function camelCase(str)
 {
 	if(testifyStr(str)){
-		str = str.replace(/[\W_]+/g,"");
+		str = str.replace(/[\W_]+/g," ");
 		str = capitalize(str).split(" ").join("");
 		str = str.replace("_",' ');
 		return str;
@@ -101,6 +101,6 @@ function leet(str)
 
 console.log(ucfirst(null));
 console.log(capitalize("hello world !"));
-console.log(camelCase("Hello world WAH_OU!"));
+console.log(camelCase("ToggleCase is_the coolest"));
 console.log(snake_case("hello world !"));
 console.log(leet("a b c d e f g h i j k l m n o p q r s t u v w x y_z"));
