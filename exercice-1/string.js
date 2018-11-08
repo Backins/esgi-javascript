@@ -46,7 +46,7 @@ function camelCase(str)
 {
 	if(testifyStr(str)){
 		str = capitalize(str).split(" ").join("");
-		str = str.replace(/[^a-z0-9]/gi,'');
+		str = str.replace("_",' ');
 		return str;
 	} else {
 		return "";
