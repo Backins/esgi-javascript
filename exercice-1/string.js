@@ -116,6 +116,18 @@ function yoda(str)
 	}
 }
 
+function prop_access(input, path){
+    let pathArray = path.split(".");
+    for(let i = 0; i < pathArray.length; i++){
+        if(input[pathArray[i]] === undefined){
+            console.error('path exist');
+            return null;
+        }
+        input = input[pathArray[i]];
+    }
+    return input;
+}
+
 // For best result visibility
 // ->Result<-
 console.log("->"+yoda(null)+"<-");
