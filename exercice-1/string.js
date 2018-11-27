@@ -67,7 +67,7 @@ function leet(str)
 {
 	if(testifyStr(str)){
 		let tmp = "";
-		for(l in str){
+		for(var l in str){
 			switch(str[l].toUpperCase()){
 				case "A":
 					tmp += "4";
