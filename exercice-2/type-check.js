@@ -1,12 +1,17 @@
 function type_check_v1(params, type)
 {
-    if(typeof params === type){
-        return true;
-    } else {
-        return false
+    switch(typeof params){
+        case "number":
+            return true;
+        case "string":
+            return true;
+        case "object":
+            return true;
+        default:
+            return false;
     }
 }
 
 // For best result visibility
 // ->Result<-
-console.log(type_check_v1("1", "string"));
+console.log(type_check_v1(null, "null"));
